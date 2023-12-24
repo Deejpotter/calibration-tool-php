@@ -56,8 +56,8 @@
                 flex-direction: column;
                 align-self: center;
                 align-items: center;
-                max-width: 90%;
                 /* Margin on small screens for breathing room */
+                max-width: 90%;
             }
 
             /* Flexbox row - Stacks elements vertically on small screens */
@@ -93,7 +93,8 @@
             }
 
             /* Section and form section styling - Margins for spacing */
-            .section, .form-section {
+            .section,
+            .form-section {
                 margin: 1rem 0;
                 padding: 1rem;
                 border: 1px solid var(--light-gray);
@@ -117,8 +118,9 @@
             .form-row-measured .form-input {
                 flex: 1;
                 padding: 0.25rem;
-                margin-right: 0.5rem;
                 /* Spacing between inputs */
+                margin-right: 0.5rem;
+
             }
 
             /* Removes margin from the last input field in the row */
@@ -143,8 +145,8 @@
             /* Medium screens - Changes row direction to horizontal */
             @media (min-width: 36rem) {
                 .row {
-                    flex-direction: row;
                     /* Horizontal layout */
+                    flex-direction: row;
                 }
 
                 /* Adjusts basis for 6, 3, and 2 column layouts */
@@ -181,8 +183,8 @@
 
                 /* Adjustments for measured values inputs */
                 .form-row-measured .form-input {
-                    flex-basis: calc(25% - 0.5rem);
                     /* Each takes a quarter width */
+                    flex-basis: calc(25% - 0.5rem);
                 }
             }
 
@@ -190,11 +192,10 @@
             /* Large screens - Sets a fixed max-width for the container */
             @media (min-width: 62rem) {
                 .container {
-                    max-width: 60rem;
                     /* Fixed width for larger screens */
-                }
+                    max-width: 60rem;
 
-                /* Additional adjustments for larger screens can be added here */
+                }
             }
         </style>
 
@@ -238,6 +239,7 @@
                                 <code>M503</code> G-Code will reveal the <code>M92</code> values. Use your existing X/Y/Z/E value for this field.
                             </div>
                         </div>
+                        <!-- Target values section -->
                         <div class="form-row">
                             <div class="form-label">
                                 <label for="spm_target">Target Value</label>
@@ -249,6 +251,7 @@
                                 The expected amount of axis movement. For example, enter 100 if you move the axis 100mm.
                             </div>
                         </div>
+                        <!-- Measured Values section -->
                         <div class="form-row">
                             <div class="form-label">
                                 <label for="spm_measured">Measured Value</label>
@@ -260,6 +263,7 @@
                                 The actual amount of axis movement. Use of calipers is recommended, but a metric ruler can be used.
                             </div>
                         </div>
+                        <!-- New Steps per mm output section -->
                         <div class="form-row bg-light border-top border-bottom">
                             <div class="form-label">
                                 <label for="spm_new">New Steps/mm Value</label>
@@ -297,6 +301,7 @@
                                 Most slicers have flow compensation set to 100% by default.
                             </div>
                         </div>
+                        <!-- Nozzle Width section -->
                         <div class="form-row">
                             <div class="form-label">
                                 <label for="flow_nozzle">Nozzle Width</label>
@@ -308,12 +313,13 @@
                                 Enter the diameter of your nozzle.
                             </div>
                         </div>
-                        <div class="form-row">
+                        <!-- Measured Values section -->
+                        <div class="form-row-measured">
                             <div class="form-label">
                                 <legend class="align-text-middle mb-0">Measured Values</legend>
                             </div>
-                            <div class="form-input">
-                                <fieldset class="col-12">
+                            <div class="form-input-measured">
+                                <fieldset>
                                     <div class="row">
                                         <!-- Measured Values Inputs -->
                                         <div class="col-3 col-md-12 my-md-1">
@@ -339,6 +345,7 @@
                                 Measure the thickness of each side of the cube wall using the top 5 layers near the center of the wall.
                             </div>
                         </div>
+                        <!-- New Flow Compensation output section -->
                         <div class="form-row bg-light border-top border-bottom">
                             <div class="form-label">
                                 <label for="flow_new">New Flow %</label>
